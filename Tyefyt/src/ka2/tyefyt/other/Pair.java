@@ -1,4 +1,4 @@
-package ka2.tyefyt.pages.other;
+package ka2.tyefyt.other;
 
 public class Pair<X,Y> {
 	public X x;
@@ -10,4 +10,9 @@ public class Pair<X,Y> {
 		
 	}
 
+	
+	public String toString(){
+		return "position: ("+this.x+","+this.y+")";
+		
+	}
 }

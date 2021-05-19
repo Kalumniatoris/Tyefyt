@@ -1,7 +1,6 @@
 package ka2.tyefyt;
 
 
-import ka2.tyefyt.pages.*;
 import ka2.tyefyt.entities.Creature;
 import ka2.tyefyt.entities.NotARat;
 
@@ -12,21 +11,13 @@ public class Main {
 
 		Creature tc = new NotARat();
 		
-		System.out.printf("%s%n%d/%d%n",tc.getDisplayName(),tc.getCurrentHP(),tc.getMaxHP());
-		System.out.printf("%d:%d%n",tc.getPosition().x,tc.getPosition().y);
-		
-		
-		tc.move(10,10);
+	System.out.println(tc.infoString());
 
-		
-		System.out.printf("%s%n%d/%d%n",tc.getDisplayName(),tc.getCurrentHP(),tc.getMaxHP());
-		System.out.printf("%d:%d%n",tc.getPosition().x,tc.getPosition().y);
-		
-		tc.move(-21, 12);
-		System.out.printf("%s%n%d/%d%n",tc.getDisplayName(),tc.getCurrentHP(),tc.getMaxHP());
-		System.out.printf("%d:%d%n",tc.getPosition().x,tc.getPosition().y);
-		
-		
+	for(int n=0;n<100;n+=1) {
+		tc.step();
+		System.out.println(tc.infoString());
+	}
+	
 	}
 
 }

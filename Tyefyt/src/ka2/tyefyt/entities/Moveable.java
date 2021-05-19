@@ -1,6 +1,6 @@
 package ka2.tyefyt.entities;
 
-import ka2.tyefyt.pages.other.Pair;
+import ka2.tyefyt.other.Pair;
 
 public interface Moveable extends OnMap {
 	

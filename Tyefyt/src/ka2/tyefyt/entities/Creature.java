@@ -3,17 +3,19 @@
  */
 package ka2.tyefyt.entities;
 
-import ka2.tyefyt.pages.other.Pair;
+import java.util.Formatter;
+
+import ka2.tyefyt.other.Pair;
 
 /**
  * @author 
  *
  */
-public abstract class Creature extends BaseEntity implements Moveable, Living {
+public abstract class Creature extends BaseEntity implements Moveable, Living, Active {
 	int hp;
 	int maxhp;
 	Pair<Integer,Integer> positon;
-	public Creature(String name, int hp) {
+	protected Creature(String name, int hp) {
 		this.setName(name);
 		this.setDisplayName(name);
 		this.hp=hp;
@@ -56,6 +58,16 @@ public abstract class Creature extends BaseEntity implements Moveable, Living {
 		this.positon.y+=vector.y;
 		return this;
 	}
-
+	
+	@Override
+	public String infoString() {
+		Formatter tmp = new Formatter();
+		String info=tmp.format("________%n%s%nhp: (%d/%d)%n%s%n%n", super.infoString(),this.getCurrentHP(),this.getMaxHP(),this.getPosition().toString()).toString();
+		
+		tmp.close();
+		
+		return info;
+		
+	}
 
 }
